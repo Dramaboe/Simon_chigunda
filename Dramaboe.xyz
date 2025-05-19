@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonHack | Ethical Hacker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Cyberpunk Terminal Theme */
+        body {
+            background-color: #0a0a0a;
+            color: #0f0;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .terminal {
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .terminal-header {
+            background-color: #111;
+            padding: 8px;
+            border-bottom: 1px solid #00ff00;
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .red { background-color: #ff5f56; }
+        .yellow { background-color: #ffbd2e; }
+        .green { background-color: #27c93f; }
+
+        .terminal-title {
+            margin-left: 10px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .terminal-body {
+            padding: 20px;
+        }
+
+        .typing-effect {
+            margin: 0;
+            line-height: 1.6;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #0f0;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .delay-1 { animation-delay: 1s; }
+        .delay-2 { animation-delay: 2s; }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #0f0; }
+        }
+
+        .glow-text {
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+            color: #0f0;
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; }
+            to { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0; }
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .hacker-btn {
+            background: transparent;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px 20px;
+            font-family: 'Share Tech Mono', monospace;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hacker-btn:hover {
+            background: #0f0;
+            color: #000;
+            box-shadow: 0 0 10px #0f0;
+        }
+
+        #output {
+            margin-top: 20px;
+            border-top: 1px dashed #0f0;
+            padding-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .terminal {
+                width: 95%;
+            }
+            .btn-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-btn red"></span>
+            <span class="terminal-btn yellow"></span>
+            <span class="terminal-btn green"></span>
+            <span class="terminal-title">Drama king 👑~</span>
+        </div>
+        <div class="terminal-body">
+            <p class="typing-effect">> Welcome to Drama's demo website.</p>
+            <p class="typing-effect delay-1">> Ethical Hacker | Pen Tester | Cyber Security Expert</p>
+            <p class="typing-effect delay-2">> Initializing system...</p>
+            <div class="glow-text">ACCESS GRANTED</div>
+            <div class="btn-container">
+                <button class="hacker-btn" id="aboutBtn">About Me</button>
+                <button class="hacker-btn" id="skillsBtn">My Skills</button>
+                <button class="hacker-btn" id="contactBtn">Contact</button>
+            </div>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutBtn = document.getElementById('aboutBtn');
+            const skillsBtn = document.getElementById('skillsBtn');
+            const contactBtn = document.getElementById('contactBtn');
+            const output = document.getElementById('output');
+
+            aboutBtn.addEventListener('click', () => {
+                output.innerHTML = `
+                    <p>> Name: NeonHack</p>
+                    <p>> Specialization: Ethical Hacking</p>
+                    <p>> Experience: 5+ years in cybersecurity</p>
+                    <p>> Motto: "Hack the planet!"</p>
+                `;
+            });
+
+            skillsBtn.addEventListener('click', () => {
+                output.innerHTML = `
+                    <p>> Penetration Testing</p>
+                    <p>> Malware Analysis</p>
+                    <p>> Network Security</p>
+                    <p>> Cryptography</p>
+                    <p>> Bug Bounty Hunter</p>
+                `;
+            });
+
+            contactBtn.addEventListener('click', () => {
+                output.innerHTML = `
+                    <p>> Email: udhaifadauda257@gmail.com</p>
+                    <p>> PGP Key: <a href="#" style="color:#0f0;">Download</a></p>
+                    <p>> Signal: +255752882045</p>
+                    <p>> Only serious inquiries.</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
